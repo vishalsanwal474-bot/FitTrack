@@ -107,3 +107,9 @@ npm start
 LIGHTWEIGHT · FAST · USEFUL · FUTURE-READY
 
 No AI coach, social network, or giant external exercise DB in v1 — architecture leaves room to add them later without rewriting the core.
+
+## Offline-first support
+
+FitTrack now supports offline use after the app has been opened online and the user has signed in once. The frontend caches the application shell and exercise catalog and stores user/workout/weight data in IndexedDB. Workout and profile changes made without a connection are queued and synchronized with the API when connectivity returns.
+
+The first login/registration still requires internet access. Offline mode is tied to the device/browser that was previously authenticated; clearing site data removes its local offline data.

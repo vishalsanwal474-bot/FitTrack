@@ -1,0 +1,12 @@
+{
+  "name": "FitTrack",
+  "short_name": "FitTrack",
+  "description": "Offline-first workout and fitness tracker",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f9fb",
+  "theme_color": "#1a2332",
+  "icons": [
+    { "src": "/fittrack-icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

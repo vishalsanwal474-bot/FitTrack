@@ -1,5 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import * as authService from '../services/authService.js';
+import { getCachedUser } from '../services/offlineData.js';
 
 const AuthContext = createContext(null);
 
@@ -20,8 +21,12 @@ export function AuthProvider({ children }) {
       const { data } = await authService.getMe();
       setUser(data.user);
     } catch {
-      localStorage.removeItem('token');
-      setUser(null);
+      const cachedUser = await getCachedUser();
+      if (cachedUser) setUser(cachedUser);
+      else {
+        localStorage.removeItem('token');
+        setUser(null);
+      }
     } finally {
       setLoading(false);
     }

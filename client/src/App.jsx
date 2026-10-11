@@ -1,23 +1,23 @@
-import { lazy, Suspense } from 'react';
+import { Suspense } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { useAuth } from './context/AuthContext.jsx';
 import AppLayout from './layouts/AppLayout.jsx';
 import AuthLayout from './layouts/AuthLayout.jsx';
 import ProtectedRoute from './components/ProtectedRoute.jsx';
 
-const Login = lazy(() => import('./pages/Login.jsx'));
-const Register = lazy(() => import('./pages/Register.jsx'));
-const Dashboard = lazy(() => import('./pages/Dashboard.jsx'));
-const StartWorkout = lazy(() => import('./pages/StartWorkout.jsx'));
-const ExerciseLibrary = lazy(() => import('./pages/ExerciseLibrary.jsx'));
-const Recommendations = lazy(() => import('./pages/Recommendations.jsx'));
-const WorkoutHistory = lazy(() => import('./pages/WorkoutHistory.jsx'));
-const Progress = lazy(() => import('./pages/Progress.jsx'));
-const Nutrition = lazy(() => import('./pages/Nutrition.jsx'));
-const PersonalRecords = lazy(() => import('./pages/PersonalRecords.jsx'));
-const Share = lazy(() => import('./pages/Share.jsx'));
-const Profile = lazy(() => import('./pages/Profile.jsx'));
-const Settings = lazy(() => import('./pages/Settings.jsx'));
+import Login from './pages/Login.jsx';
+import Register from './pages/Register.jsx';
+import Dashboard from './pages/Dashboard.jsx';
+import StartWorkout from './pages/StartWorkout.jsx';
+import ExerciseLibrary from './pages/ExerciseLibrary.jsx';
+import Recommendations from './pages/Recommendations.jsx';
+import WorkoutHistory from './pages/WorkoutHistory.jsx';
+import Progress from './pages/Progress.jsx';
+import Nutrition from './pages/Nutrition.jsx';
+import PersonalRecords from './pages/PersonalRecords.jsx';
+import Share from './pages/Share.jsx';
+import Profile from './pages/Profile.jsx';
+import Settings from './pages/Settings.jsx';
 
 function PageLoader() {
   return (

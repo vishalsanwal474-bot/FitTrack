@@ -1,3 +1,4 @@
+import OfflineStatus from '../components/OfflineStatus.jsx';
 import { NavLink, Outlet } from 'react-router-dom';
 import {
   Activity,
@@ -55,7 +56,9 @@ export default function AppLayout() {
   const { user, logout } = useAuth();
 
   return (
-    <div className="min-h-screen bg-fog lg:flex">
+    <>
+      <OfflineStatus />
+      <div className="min-h-screen bg-fog lg:flex">
       <aside className="hidden w-64 shrink-0 flex-col bg-steel text-white lg:flex">
         <div className="border-b border-white/10 px-5 py-6">
           <p className="font-display text-2xl font-extrabold tracking-tight text-lime">FitTrack</p>
@@ -112,6 +115,7 @@ export default function AppLayout() {
           </NavLink>
         ))}
       </nav>
-    </div>
+      </div>
+    </>
   );
 }
